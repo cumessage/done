@@ -5,7 +5,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
-import com.prosper.clockgame.frontend.util.RunDataReciever;
+import com.prosper.done.frontend.util.RunDataReciever;
 
 public class RunDataRecieverTest {
 
