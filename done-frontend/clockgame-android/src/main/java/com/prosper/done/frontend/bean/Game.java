@@ -21,6 +21,7 @@ public class Game {
 
 	public Game(JSONObject jsonObject) {
 		try {
+			
 			this.id = jsonObject.getInt("id");
 			this.name = jsonObject.getString("name");
 			this.desc = jsonObject.getString("desc");
