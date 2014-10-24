@@ -30,16 +30,18 @@ public class MainActivity extends Activity {
 		listView.setAdapter(new ArrayAdapter<String>(
 				this, android.R.layout.simple_expandable_list_item_1, getData()));
 		setContentView(listView);
-//		setContentView(R.layout.activity_main);
+		//		setContentView(R.layout.activity_main);
 	}
 
 	private List<String> getData() {
 		List<String> dataList = new ArrayList<String>();
 		Cursor c = getTaskList();
-		while(!c.isLast()) {
-			Log.d("donelog", "name: " + c.getColumnIndex(Task.COLUMN_NAME_DESC));
-			dataList.add(c.getString(1));
-			c.moveToNext();
+		if (c.moveToFirst() != false) {
+			while(!c.isLast()) {
+				Log.d("donelog", "name: " + c.getColumnIndex(Task.COLUMN_NAME_DESC));
+				dataList.add(c.getString(1));
+				c.moveToNext();
+			}
 		}
 		return dataList;
 	}
@@ -64,8 +66,6 @@ public class MainActivity extends Activity {
 				null,                                     // don't filter by row groups
 				sortOrder                                 // The sort order
 				);
-
-		c.moveToFirst();
 		return c;
 	}
 
