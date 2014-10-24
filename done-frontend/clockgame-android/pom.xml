@@ -25,12 +25,13 @@
 			<groupId>com.google.android</groupId>
 			<artifactId>support-v4</artifactId>
 			<version>r7</version>
+			<type>jar</type>
 		</dependency>
 		<dependency>
-			<groupId>com.actionbarsherlock</groupId>
-			<artifactId>actionbarsherlock</artifactId>
-			<version>4.4.0</version>
-			<type>apklib</type>
+			<groupId>com.google.android</groupId>
+			<artifactId>support-v7-appcompat</artifactId>
+			<version>r7</version>
+			<type>jar</type>
 		</dependency>
 		<dependency>
 			<groupId>com.loopj.android</groupId>
@@ -38,10 +39,10 @@
 			<version>1.4.4</version>
 		</dependency>
 		<dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>2.1.2</version>
-        </dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.1.2</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>${project.artifactId}</finalName>

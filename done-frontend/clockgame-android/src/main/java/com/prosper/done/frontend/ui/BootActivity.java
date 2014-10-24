@@ -6,7 +6,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.actionbarsherlock.app.SherlockActivity;
 import com.prosper.done.frontend.R;
@@ -20,21 +22,21 @@ public class BootActivity extends SherlockActivity {
         super.onCreate(bundle);
         setContentView(R.layout.activity_boot);
         
-        InputStream gamesInputStream = getResources().openRawResource(R.raw.active_games);
+        InputStream config = getResources().openRawResource(R.raw.config);
         JSONArray jsonArray = null;
         try {
-			jsonArray = new JSONArray(gamesInputStream.toString());
+			// jsonArray = new JSONArray(config.toString());
+			// todo load config
+			Thread.sleep(500);
 			
-			for(int i = 0; i < jsonArray.length(); i ++) {
-	        	String gameFile = jsonArray.get(i).toString();
-	        	InputStream gameInputStream = getResources().openRawResource(R.raw.rungame);
-	        	JSONObject jsonObject = new JSONObject(gameInputStream.toString());
-	        	
-	        	Game game = new Game(jsonObject);
-	        	GameResource.getInstance().put(game.getId(), game);
-	        }
-		} catch (JSONException e) {
+			
+		} catch (Exception e) {
+			System.out.println("load config failed");
 			e.printStackTrace();
+			return;
 		}
+        
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }

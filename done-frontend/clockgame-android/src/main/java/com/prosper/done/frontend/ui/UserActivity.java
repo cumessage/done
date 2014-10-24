@@ -37,7 +37,7 @@ public class UserActivity extends SherlockActivity {
     */
     
     public void login(View view) {
-    	final Intent intent = new Intent(this, GameListActivity.class);
+    	final Intent intent = new Intent(this, MainActivity.class);
     	String email = ((EditText) findViewById(R.id.edit_email)).getText().toString();
     	String password = ((EditText) findViewById(R.id.edit_password)).getText().toString();
     	
