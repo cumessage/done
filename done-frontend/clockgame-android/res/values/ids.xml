@@ -10,7 +10,7 @@
     <item type="id" name="create_input_memo"/>
     <item type="id" name="create_input_location"/>
     <item type="id" name="create_input_start_time"/>
-    <item type="id" name="create_input_last_time"/>
+    <item type="id" name="create_input_end_time"/>
     <item type="id" name="create_input_repeat_count"/>
     
     <!-- old -->

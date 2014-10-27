@@ -13,6 +13,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:inputType="text"
         android:hint="@string/create_input_desc" />
 
     <EditText
@@ -20,6 +21,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:inputType="text"
         android:hint="@string/create_input_memo" />
 
     <EditText
@@ -27,6 +29,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:inputType="text"
         android:hint="@string/create_input_location" />
 
     <EditText
@@ -34,20 +37,23 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:inputType="text"
         android:hint="@string/create_input_start_time" />
 
     <EditText
-        android:id="@+id/create_input_last_time"
+        android:id="@+id/create_input_end_time"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:hint="@string/create_input_last_time" />
+        android:inputType="number"
+        android:hint="@string/create_input_end_time" />
 
     <EditText
         android:id="@+id/create_input_repeat_count"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:inputType="number"
         android:hint="@string/create_input_repeat_count" />
 
     <Button

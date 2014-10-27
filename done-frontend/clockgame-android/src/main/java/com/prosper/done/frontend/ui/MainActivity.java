@@ -4,8 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.prosper.done.frontend.R;
-import com.prosper.done.frontend.data.DoneDb;
-import com.prosper.done.frontend.data.DoneDbConfig.Task;
+import com.prosper.done.frontend.bean.Task;
+import com.prosper.done.frontend.data.DoneDbHelper;
+import com.prosper.done.frontend.data.TaskDao;
+import com.prosper.done.frontend.data.DoneDbConfig.TaskConfig;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -34,39 +36,15 @@ public class MainActivity extends Activity {
 	}
 
 	private List<String> getData() {
+		DoneDbHelper dbHelper = new DoneDbHelper(getBaseContext());
+		TaskDao taskDao = new TaskDao(dbHelper);
+		List<Task> taskList = taskDao.getList();
+		
 		List<String> dataList = new ArrayList<String>();
-		Cursor c = getTaskList();
-		if (c.moveToFirst() != false) {
-			while(!c.isLast()) {
-				Log.d("donelog", "name: " + c.getColumnIndex(Task.COLUMN_NAME_DESC));
-				dataList.add(c.getString(1));
-				c.moveToNext();
-			}
+		for (Task task : taskList) {
+			dataList.add(task.getDesc());
 		}
 		return dataList;
-	}
-
-	private Cursor getTaskList() {
-		DoneDb mDbHelper = new DoneDb(getBaseContext());
-		SQLiteDatabase db = mDbHelper.getReadableDatabase();
-
-		String[] projection = {
-				Task._ID,
-				Task.COLUMN_NAME_DESC
-		};
-
-		String sortOrder = Task._ID + " DESC";
-
-		Cursor c = db.query(
-				Task.TABLE_NAME,  // The table to query
-				projection,                               // The columns to return
-				null,                                // The columns for the WHERE clause
-				null,                            // The values for the WHERE clause
-				null,                                     // don't group the rows
-				null,                                     // don't filter by row groups
-				sortOrder                                 // The sort order
-				);
-		return c;
 	}
 
 	@Override

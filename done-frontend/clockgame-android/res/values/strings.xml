@@ -18,7 +18,7 @@
     <string name="create_input_memo">备忘</string>
     <string name="create_input_location">地点</string>
     <string name="create_input_start_time">开始时间</string>
-    <string name="create_input_last_time">结束时间</string>
+    <string name="create_input_end_time">结束时间</string>
     <string name="create_input_repeat_count">最大重复次数</string>
     <string name="create_button_confirm">添加</string>
 
