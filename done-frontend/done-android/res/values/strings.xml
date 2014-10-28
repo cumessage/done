@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <!-- system -->
+    <string name="app_name">完成</string>
+
+    <!-- boot activity -->
+    <string name="boot_title">初始化</string>
+
+    <!-- main activity -->
+    <string name="main_title">完成</string>
+    <string name="main_action_add">Add</string>
+    <string name="main_action_settings">Settings</string>
+    <string name="main_item_done">完成</string>
+    <string name="main_item_delay">延期</string>
+    <string name="main_item_discard">废弃</string>
+
+    <!-- create activity -->
+    <string name="create_title">完成</string> 
+    <string name="create_input_desc">描述</string>
+    <string name="create_input_memo">备忘</string>
+    <string name="create_input_location">地点</string>
+    <string name="create_input_start_time">开始时间</string>
+    <string name="create_input_end_time">结束时间</string>
+    <string name="create_input_is_repeat">是否重复</string>
+    <string name="create_input_max_count">周期内最大执行次数</string>
+    <string name="create_button_confirm">添加</string>
+    
+    <!-- time input -->
+    <string name="time_input_confirm">确定</string>
+    <string name="time_input_cancel">取消</string>
+
+
+</resources>
